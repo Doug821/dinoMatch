@@ -26,10 +26,19 @@
             <button type="button" onclick="restart()">Restart</button>
         </div>
         <div id="gameOver">
-            <div>
-                Parabéns, você completou o jogo!
+            <div class="gameOverDinos">
+                <lottie-player class="dinoOver" src="./assets/json/dinoBlue.json" background="transparent" speed="0.63"
+                    loop autoplay style="width: 100%; height: 100%;"></lottie-player>
+                <lottie-player class="winner" src="https://assets9.lottiefiles.com/packages/lf20_9ngjlC.json"
+                    background="transparent" speed="1" loop autoplay reverse style="width: 100%; height: 100%;">
+                </lottie-player>
+                <lottie-player class="dinoOver2" src="./assets/json/dinoPink.json" background="transparent" speed="0.63"
+                    loop autoplay style="width: 100%; height: 100%;"></lottie-player>
             </div>
-            <button id="restart" onclick="restart()">Play again</button>
+            <div class="congrats">
+                Congratulations, you finished the game!
+                <button id="restart" class="restartBtn" onclick="restart()">Play again</button>
+            </div>
         </div>
     </div>
 
