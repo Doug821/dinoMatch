@@ -3,8 +3,6 @@ const BACK = "card_back"
 const CARD = "card"
 const ICON = "icon"
 
-let moves = 0;
-
 startGame();
 
 function startGame() {
@@ -51,14 +49,8 @@ function createCardFace(face, card, element) {
 
 
 function flipCard() {
-
-    moves++;
-
-    let movesCounter = document.getElementById('moveCount');
-    movesCounter.innerHTML = moves;
-
     if (game.setCard(this.id)) {
-
+        game.countMove(this.id);
         this.classList.add("flip");
         if (game.secondCard) {
             if (game.checkMatch()) {

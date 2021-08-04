@@ -17,12 +17,12 @@ let game = {
         'dinoYellow'
     ],
 
+    moves: 0,
     cards: null,
 
     setCard: function (id) {
 
         let card = this.cards.filter(card => card.id === id)[0];
-        console.log(card);
         if (card.flipped || this.lockMode) {
             return false;
         }
@@ -38,6 +38,16 @@ let game = {
             return true;
         }
 
+    },
+
+    countMove: function (id) {
+        let card = this.cards.filter(card => card.id === id)[0];
+        if (card.flipped) {
+            this.moves++
+            let movesCounter = document.getElementById('moveCount');
+            movesCounter.innerHTML = this.moves;
+            return true;
+        }
     },
 
     checkMatch: function () {
